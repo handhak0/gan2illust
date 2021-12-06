@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림체 설명</title>
+    <link rel="stylesheet" href="../static/description.css">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>    
+</head>
+<body>
+    <header>
+        <div class = 'header'><a href = "/home"><i class="fas fa-chevron-left" style = "color : #F85D5D"></i></a></div>
+        <div style = 'margin-left : 120px; font-weight : bold;'>그림체 설명</div>
+    </header>
+
+    <main>
+    
+        
+        <div class="carousel-wrapper" style="height: 350px;">
+            
+            <div class="carousel">
+                <div style="    width : 265px;
+                border-radius: 4pt ;
+                margin-left: 10px;">
+                    <p style = "color :#F85D5D; font-size: 18px; font-weight : bolder; text-align : center;"> 실사</p>
+                    <img id = 'img_section' src = '../static/Style/img01.png' style = "    width : 265px;
+                    height : 265px;
+                    object-fit: cover;
+                    border-radius: 4pt ;
+                    margin-left: 10px;">
+                </div>
+                
+                <div style="    width : 265px;
+                border-radius: 4pt ;
+                margin-left: 10px;">
+                    <p style = "color :#F85D5D; font-size: 18px; font-weight : bolder; text-align : center;">웹툰</p>
+                    <img id = 'img_section' src = '../static/Style/img02.png' style="    width : 265px;
+                    height : 265px;
+                    object-fit: cover;
+                    border-radius: 4pt ;
+                    margin-left: 10px;">
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <div class = "carousel-button" style="color: #F85D5D; text-align : center; padding-left : 40px; font-size : 30px;">
+            <span class="prev" type="button"><i class="fas fa-chevron-left"></i></span> <span class="next" type="button"><i class="fas fa-chevron-right"></i></span>
+        </div>
+       
+
+        <div style = "font-size: 12px; margin-left : 25px; font-weight : bolder; width : 400px; padding-top : 20px;" > 
+            <p>*저희 서비스는 2가지 그림체를 제공하고 있습니다</p>
+        </div>
+        <a href = "/write/" style = "text-decoration: none; color : white;"><div class = "download">다음</div></a>
+
+    </main>
+
+    <div class = 'footer'>
+        <ul>
+            <div class = 'nav' ><li><a href = '/home' style = "color : #C4C4C4;"><i class="fas fa-home"></a></i></li></div>
+            <div class = 'now'><li><a href = '/description' style = "color : #F85D5D;"><i class="fas fa-pencil-alt"></i></a></li></div>
+            <div class = 'nav'><li><a href = '/chatbot' style = "color : #C4C4C4;"><i class="fas fa-comments"></i></a></li></div>
+            <div class = 'nav'><li><i class="fas fa-bars"></i></li></div>
+        </ul>
+    </div>
+
+    <script>
+        const prevButton = document.querySelector('.prev'); 
+        const nextButton = document.querySelector('.next'); 
+        const carousel = document.querySelector('.carousel');
+
+        let index = 0; 
+        prevButton.addEventListener('click', () => { 
+            if (index === 0) return; 
+            index -= 1; 
+            carousel.style.transform = `translate3d(-${260 * index}px, 0, 0)`;
+         }); 
+         
+        nextButton.addEventListener('click', () => { 
+            if (index === 2) return; 
+            index += 1; 
+            carousel.style.transform = `translate3d(-${260 * index}px, 0, 0)`; 
+        });
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

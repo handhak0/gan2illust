@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>write</title>
+        <link href="../static/write.css" rel="stylesheet" type="text/css" />
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    </head>
+<body>
+
+        <header>
+            <div class = 'header'><a href = "/description"><i class="fas fa-chevron-left" style = "color : #F85D5D"></i></a></div>
+            <div style = 'margin-left : 120px; font-weight : bold;'>주인공 만들기</div>
+            
+        </header>
+
+        <main>
+            
+            <form method="post" action = "/runmodel/" enctype="multipart/form-data" style="padding-top: 0;">
+                
+                
+                <div class = "guide_box">
+                    <label className="input-file-button" for="input-file">
+                        <i class="fas fa-camera"></i><span class = 'photo_guide'>사진을 등록해주세요.</span>
+                    </label>
+                    <input type = "file" id="input-file" name = "files" multiple>
+                </div>
+                
+                <div style="z-index:2; margin-top : 0px;">
+                    <img id = 'img_section'>
+                </div>
+                    
+                    
+                
+               
+                <div class = 'select'> 
+                    <span class = 'select_name'>그림체</span>
+                    <input type = 'radio' name = 'style' value = 'human'><label>실사</label>
+                    <input type = 'radio' name = 'style' value = 'webtoon'><label>웹툰</label>
+
+                </div>
+
+                <!--div class = 'select'> 
+                    <span class = 'select_name'>성별</span>
+                    <input type = 'radio' name = 'sex'  value = '0'><label>남자</label>
+                    <input type = 'radio' name = 'sex' value = '1'><label>여자</label>
+
+                </div--> 
+                <div class = "guide">
+                    <span style = "color : #F85D5D; font-weight : bolder;">※주의사항</span> <br> <br>
+                    1. 정면을 바라 본 사진으롷 넣어주세요 <br>
+                    2. 정방형으로 된 사진으롷 넣어주세요 <br>
+                    3. 얼굴이 또렷한 사진으롷 넣어주세요
+                </div>
+                <input type = "submit" value = "확인">
+                
+            </form>
+            
+
+        </main>
+        
+        <div class = 'footer'>
+            <ul>
+                <div class = 'nav' ><li><a href = '/home' style = "color : #C4C4C4;"><i class="fas fa-home"></a></i></li></div>
+                <div class = 'now'><li><a href = '/description' style = "color : #F85D5D;"><i class="fas fa-pencil-alt"></i></a></li></div>
+                <div class = 'nav'><li><i class="fas fa-comments"></i></li></div>
+                <div class = 'nav'><li><i class="fas fa-bars"></i></li></div>
+
+            </ul>
+        </div>
+
+
+    <script>
+        const reader = new FileReader();
+
+        reader.onload = (readerEvent) => {
+            document.querySelector("#img_section").setAttribute("src", readerEvent.target.result);
+            //파일을 읽는 이벤트가 발생하면 img_section의 src 속성을 readerEvent의 결과물로 대체함
+        };
+
+        document.querySelector("#input-file").addEventListener("change", (changeEvent) => {
+            //upload_file 에 이벤트리스너를 장착
+
+            const imgFile = changeEvent.target.files[0];
+            reader.readAsDataURL(imgFile);
+            //업로드한 이미지의 URL을 reader에 등록
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

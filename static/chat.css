@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+body{
+    margin:0;
+}
+
+header{
+    background-color:#fff;
+    height: 32px;
+    min-width: 120px;
+    border-bottom-style : solid;
+    border-bottom-color: rgba(128, 128, 128, 0.322);
+    border-bottom-width: 0.2px;
+    margin-top : 11px;
+    width : 320px;
+}
+
+
+div.header { 
+    text-align: left;
+    height: 24px;
+    color: #F85D5D;
+    font-weight: bolder;
+    position:fixed;
+    width: 280px;
+    padding-left :14pt;
+    margin-right: 0;
+}
+
+main {
+    font: 1rem 'Roboto', sans-serif;
+    width:280px;
+}
+
+.footer{
+    position: relative;
+    background-color: #fff;
+    width: 370px;
+    margin-top: 70px;
+    
+}
+
+
+ul{
+  list-style-type: none;
+  border :rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  margin-left: 8px;
+  margin-top: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 370px;
+  height: 50px;
+  position: absolute;
+}
+
+li  { float: left;   
+   margin-right: 20px;
+   margin-left : 20px; 
+   height: 25pt;
+   width: 25pt;
+}
+
+
+
+
+.user {
+margin-left : 280px;
+margin-right: 0;
+font-size: 20px;
+}
+
+.setting {
+margin-left : 10px;
+margin-right: 0;
+font-size: 20px;
+}
+
+div.nav{
+margin-left: 6px;
+font-size: 25px;
+color : #C4C4C4;
+}
+
+div.now {
+color : #F85D5D; 
+font-size : 25px;  
+margin-left: 6px;
+}
+
+a:visited { color: #C4C4C4; text-decoration-color: none;}
+
+.container{
+    width: 280px;
+    height: 250px;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-top: 0;
+    border: 1px solid lightgray;
+}
+
+div.download {
+    width : 232px;
+    height : 20px;
+    background-color: #F85D5D;
+    border: 2px solid #F85D5D;
+    color: white;
+    padding: 5px 32px;
+    margin-left : 8px;
+    margin-top : 30px;
+    border-radius: 3px;
+    text-align: center;
+    font-size : 14px;
+
+}

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+body{
+    margin:0;
+}
+
+header{
+    background-color:#fff;
+    height: 32px;
+    min-width: 120px;
+    border-bottom-style : solid;
+    border-bottom-color: rgba(128, 128, 128, 0.322);
+    border-bottom-width: 0.2px;
+    margin-top : 11px;
+    width : 320px;
+    
+    
+}
+
+
+div.header { 
+    text-align: left;
+    height: 24px;
+    color: #F85D5D;
+    font-weight: bolder;
+    position:fixed;
+    width: 280px;
+    padding-left :14pt;
+    margin-right: 0;
+}
+
+
+
+
+
+main {
+    font: 1rem 'Roboto', sans-serif;
+    width:280px;
+}
+
+
+/* 여기서부터 not 공통 */
+
+
+input[type="text"] {
+    border : 1px solid #e5e5e5;
+    height : 35px;
+    width : 295px;
+    border-radius: 3px;
+    margin-left : 8px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+input[type="text"]:focus { outline: 0.5px solid  #F85D5D; }
+
+input[type="password"] {
+    border : 1px solid #e5e5e5;
+    height : 35px;
+    width : 295px;
+    border-radius: 3px;
+    margin-left : 8px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+
+}
+
+input[type="password"]:focus { outline: 0.5px solid  #F85D5D; }
+
+input::placeholder {
+    color:#C4C4C4;
+  }
+
+input[type = "submit"] {
+    width : 310px;
+    height : 35px;
+    background-color: #F85D5D;
+    border: 1px solid #F85D5D;
+    color: white;
+    padding: 5px 32px;
+    text-decoration: none;
+    margin-left : 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+
+input[type = "button"] {
+    width : 310px;
+    height : 35px;
+    background-color: white;
+    border: 1px solid #F85D5D;
+    color: #F85D5D;
+    padding: 5px 32px;
+    text-decoration: none;
+    margin-left : 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link href="../static/home.css" rel="stylesheet" type="text/css" />
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+    <style> 
+        a:visited { color: #C4C4C4; text-decoration-color: none;}
+    </style>
+</head>
+
+
+<body>
+    <div class = 'contents'> 
+        <header>
+            <div class = 'header'>PixByGAN
+            </div>
+            <span class = 'user'><a href  = "/login"><i class="fas fa-user" style = "color : #F85D5D" ></i></a></span>
+            <span class = 'setting'><i class="fas fa-cog"style = "color : #F85D5D"></i></span>
+            
+        </header>
+        
+        <main>
+            
+            <div class = 'title'><u><p>당신의 소설 속<br>주인공을 만들어보세요!</p></u></div>
+            <table>
+                <tr><!--첫 번째 줄-->
+                    <td><img id = "imgId" src = ""></td>
+                    <td><img id = "imgId" src = ""></td>
+                </tr>
+                <tr><!--두 번째 줄-->
+                    <td><img id = "imgId" src = ""></td>
+                    <td><img id = "imgId" src = ""></td>
+                </tr>
+                <tr><!--세 번째 줄-->
+                    <td><img id = "imgId" src = ""></td>
+                    <td><img id = "imgId" src = ""></td>
+                </tr>
+                
+                <!-- <a id = "imgPathId" href = "" ></a> -->
+
+            </table>
+    
+
+                
+        </main>
+
+        <div class = 'footer'>
+                    <ul>
+                        <div class = 'now' ><li><a href = '/home' style = "color : #F85D5D;"><i class="fas fa-home"></a></i></li></div>
+                        <div class = 'nav'><li><a href = '/description' style = "color : #C4C4C4;" ><i class="fas fa-pencil-alt"></i></a></li></div>
+                        <div class = 'nav'><li><a href = '/chatbot' style = "color : #C4C4C4;"><i class="fas fa-comments"></i></a></li></div>
+                        <div class = 'nav'><li><i class="fas fa-bars"></i></li></div>
+
+                    </ul>
+        </div>
+    </div>
+    
+    <script>
+        function randomNum(min, max){
+            var randNum = Math.floor(Math.random()*(max-min+1)) + min;
+            return randNum;
+        }
+
+
+        var imgAll = document.querySelectorAll("#imgId");
+        for (var i=0; i<6; i++){
+               imgAll[i].src = "/home_img/"+ randomNum(0,50);
+           }
+
+        //var imgPathAll = document.querySelectorAll("#imgPathId");
+        //for (var i=0; i<6; i++){
+           // imgPathAll[i].href = "/home_imgshow/" + i;
+       // }
+
+</script>
+       
+    
+
+</body>
+
+
+</html>
