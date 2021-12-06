@@ -178,7 +178,7 @@ async def chatAnswer(request : Request, question: str = Form(...)):
     question = question
     res = ChatbotMessageSender(question).req_message_send()
     answer = json.loads(res.text)
-    chatAnswer = answer['bubbles'][0]['data']
+    chatAnswer = answer['bubbles'][0]['data']['description']
 
     return templates.TemplateResponse("chat.html", context={"request": request, "chatAnswer" : chatAnswer})
 
