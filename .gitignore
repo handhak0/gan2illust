@@ -5,3 +5,6 @@
 /static/input/
 /static/output/
 /static/Style/
+chatbot.py
+
+/__pycache__/
