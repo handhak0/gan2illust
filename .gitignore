@@ -10,3 +10,5 @@ dataset/
 
 __pycache__/
 .idea/
+
+*.py
