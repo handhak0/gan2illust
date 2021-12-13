@@ -1,10 +1,12 @@
 *.pt
-/pix2pixckpt/
-/Face_Segmentation/
-/dataset/
+pix2pixckpt/
+Face_Segmentation/
+dataset/
 /static/input/
 /static/output/
 /static/Style/
-chatbot.py
 
-/__pycache__/
+/chatbot.py
+
+__pycache__/
+.idea/

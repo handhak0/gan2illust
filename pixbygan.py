@@ -32,6 +32,15 @@ modelW = UGATIT()
 modelW.build_model()
 modelW.load('./YOUR_DATASET_NAME_params_latest.pt')
 
+modelH = UGATIT()
+modelH.build_model()
+modelH.load('./dongdong_params_latest.pt')
+
+
+modelHH = UGATIT()
+modelHH.build_model()
+modelHH.load('./sonson_params_latest.pt')
+
 
 
 '''프로그램 시작'''
@@ -117,6 +126,50 @@ async def runmodel(request : Request, files: UploadFile = File(...), style : str
         image.save(output_src)
 
         os.remove(file_location)
+    elif style == "human2" :
+        file_location = f"./dataset/YOUR_DATASET_NAME/testA/{fnm}"
+
+        with open(file_location, "wb+") as file_object:
+            file_object.write(files.file.read())
+
+        modelH.dataload()
+
+        real_A, _ = next(iter(modelH.testA_loader))
+        real_A = real_A.to(modelH.device)
+
+        fake_A2B, _, fake_A2B_heatmap = modelH.genA2B(real_A)
+
+        image = tensor2numpy(denorm(fake_A2B[0]))
+
+        image = np.array(Image.fromarray((image * 255).astype(np.uint8)).resize((256, 256)).convert('RGB'))
+        image = Image.fromarray(image)
+
+        output_src = f"./static/output/{fnm}"
+        image.save(output_src)
+        os.remove(file_location)
+
+    elif style == "human3" :
+        file_location = f"./dataset/YOUR_DATASET_NAME/testA/{fnm}"
+
+        with open(file_location, "wb+") as file_object:
+            file_object.write(files.file.read())
+
+        modelHH.dataload()
+
+        real_A, _ = next(iter(modelHH.testA_loader))
+        real_A = real_A.to(modelHH.device)
+
+        fake_A2B, _, fake_A2B_heatmap = modelHH.genA2B(real_A)
+
+        image = tensor2numpy(denorm(fake_A2B[0]))
+
+        image = np.array(Image.fromarray((image * 255).astype(np.uint8)).resize((256, 256)).convert('RGB'))
+        image = Image.fromarray(image)
+
+        output_src = f"./static/output/{fnm}"
+        image.save(output_src)
+        os.remove(file_location)
+
 
     return templates.TemplateResponse("output.html", context={"request": request})
 
