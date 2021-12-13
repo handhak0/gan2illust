@@ -6,9 +6,9 @@ dataset/
 /static/output/
 /static/Style/
 
-/chatbot.py
+chatbot.py
 
 __pycache__/
 .idea/
 
-*.py
+
